@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.houyembensaid.domaine.Contrat;
 import tn.esprit.houyembensaid.domaine.ModePaiement;
 import tn.esprit.houyembensaid.domaine.Paiement;
-import tn.esprit.houyembensaid.repository.ContratRepository;
+import tn.esprit.houyembensaid.repository.IContratRepository;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,7 +17,7 @@ import java.time.LocalDate;
 class FetchTest {
 
     @Autowired
-    ContratRepository contratRepository;
+    IContratRepository contratRepository;
 
     @Autowired
     EntityManager em;
