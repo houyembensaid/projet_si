@@ -1,28 +1,20 @@
-
 package tn.esprit.houyembensaid.domaine;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Paiement {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPaiement;
-
     private BigDecimal montant;
     private LocalDate datePaiement;
-
     @Enumerated(EnumType.STRING)
     private ModePaiement modePaiement;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Contrat contrat;
 }
